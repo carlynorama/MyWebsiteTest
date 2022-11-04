@@ -41,9 +41,8 @@ jobs:
           git config --global user.email 'action@github.com'
           git fetch                         # fetch branches
           git checkout $TARGET_BRANCH       # checkout to your branch
-          rm -rf *
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
-          mv $SRC_FOLDER_PATH/* .
+          git rsync -avh --progress $SRC_FOLDER_PATH/ .
           git add -A
           git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH # push to remote branch
