@@ -43,7 +43,6 @@ jobs:
           git checkout $TARGET_BRANCH       # checkout to your branch
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           rsync -avh --progress $SRC_FOLDER_PATH/ .
-          rm -rf $SRC_FOLDER_PATH
           rm $SRC_FOLDER_PATH/* $SRC_FOLDER_PATH/.* 
           rmdir $SRC_FOLDER_PATH
           git add -A
