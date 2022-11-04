@@ -14,7 +14,7 @@ struct MyWebsiteTest: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://carlynorama.github.io")!
+    var url = URL(string: "https://carlynorama.github.io/MyWebsiteTest")!
     var name = "MyWebsiteTest"
     var description = "A description of MyWebsiteTest"
     var language: Language { .english }
