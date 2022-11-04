@@ -34,6 +34,8 @@ jobs:
         env:
           SRC_FOLDER_PATH: 'Output'
           TARGET_BRANCH: 'gh-pages'
+        with:
+          token: ${{ secrets.GH_TOKEN }}
         run: |
           files=$(find $SRC_FOLDER_PATH -type f) # get the file list
           git config --global user.name 'GitHub Action'
