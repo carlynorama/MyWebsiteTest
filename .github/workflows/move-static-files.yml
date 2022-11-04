@@ -41,7 +41,7 @@ jobs:
           git config --global user.email 'action@github.com'
           git fetch                         # fetch branches
           git checkout $TARGET_BRANCH       # checkout to your branch
-          rm *
+          rm -rf
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           mv $SRC_FOLDER_PATH/* .
           git add -A
