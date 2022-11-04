@@ -43,6 +43,9 @@ jobs:
           git checkout $TARGET_BRANCH       # checkout to your branch
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           rsync -avh --progress $SRC_FOLDER_PATH/ .
+          rm -rf $SRC_FOLDER_PATH
+          rm $SRC_FOLDER_PATH/* $SRC_FOLDER_PATH/.* 
+          rmdir $SRC_FOLDER_PATH
           git add -A
           git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH # push to remote branch
