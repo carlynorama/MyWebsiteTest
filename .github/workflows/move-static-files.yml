@@ -27,7 +27,7 @@ jobs:
     name: Copy my folder
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Do copy
         env:
           SRC_FOLDER_PATH: 'Output'
